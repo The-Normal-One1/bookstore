@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Category() {
-  return <div className="cat">Under Construction</div>;
+  return (
+    <button className="cat" type="button">
+      Check status
+    </button>
+  );
 }
 
 export default Category;
