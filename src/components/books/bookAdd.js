@@ -1,13 +1,11 @@
 import React from 'react';
-import { Form } from 'react-router-dom';
 import './books.css';
 
 function BookAdd() {
   return (
     <div>
       <h2 className="formheading">ADD NEW BOOK</h2>
-
-      <Form className="form">
+      <form className="form">
         <input
           className="inpField"
           type="text"
@@ -23,7 +21,7 @@ function BookAdd() {
         <button className="btn" type="submit">
           ADD BOOK
         </button>
-      </Form>
+      </form>
     </div>
   );
 }
