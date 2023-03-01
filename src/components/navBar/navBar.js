@@ -7,9 +7,9 @@ function Nav() {
   return (
     <div className="nav">
       <ul className="nav-links">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           BookStore CMS
-        </a>
+        </Link>
         <li>
           <Link to="/" className="links">
             Books

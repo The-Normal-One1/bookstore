@@ -1,27 +1,17 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { checkStatus } from '../../redux/categories/categoriesSlice';
 
 function Category() {
-  const { category } = useSelector((state) => state.category);
-  const [searchField, setSearchField] = useState('');
-  const [filterResult, setFilterResult] = useState(category);
-
-  const filterHandler = () => {
-    setFilterResult(
-      filterResult.map((item) => item.country.includes(searchField)),
-    );
-  };
-
+  const category = useSelector((state) => state.category);
+  const dispatch = useDispatch();
+  const handleClick = () => dispatch(checkStatus());
   return (
-    <div className="categories">
-      <input
-        type="text"
-        value={searchField}
-        onChange={(e) => setSearchField(e.target.value)}
-      />
-      <button className="cat" type="button" onClick={filterHandler}>
-        Check status
+    <div className="categories-wrapper">
+      <button className="cat" type="button" onClick={handleClick}>
+        Check Status
       </button>
+      <div>{category}</div>
     </div>
   );
 }
