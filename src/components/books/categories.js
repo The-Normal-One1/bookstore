@@ -8,7 +8,7 @@ function Category() {
 
   const filterHandler = () => {
     setFilterResult(
-      filterResult.map((item) => item.country.includes(searchField))
+      filterResult.map((item) => item.country.includes(searchField)),
     );
   };
 
