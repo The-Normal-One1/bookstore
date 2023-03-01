@@ -8,7 +8,7 @@ function Category() {
 
   const filterHandler = () => {
     setFilterResult(
-      filterResult.map((item) => item.country.includes(searchField)),
+      filterResult.map((item) => item.country.includes(searchField))
     );
   };
 
@@ -20,7 +20,7 @@ function Category() {
         onChange={(e) => setSearchField(e.target.value)}
       />
       <button className="cat" type="button" onClick={filterHandler}>
-        Filter
+        Check status
       </button>
     </div>
   );
