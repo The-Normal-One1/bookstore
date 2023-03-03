@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './books.css';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/booksSlice';
+import { deleteBook, removeBook } from '../../redux/books/booksSlice';
 
-function BookList({ List }) {
+function BookList({ List, id }) {
   const { title, author } = List;
   const dispatch = useDispatch();
+
+  const removeHandler = (e) => {
+    const { id } = e.target.dataset;
+    dispatch(removeBook(id));
+    dispatch(deleteBook(id));
+  };
 
   return (
     <div className="bookli">
@@ -20,9 +26,10 @@ function BookList({ List }) {
         </button>
 
         <button
+          data-id={id}
           type="button"
           className="comment"
-          onClick={() => dispatch(removeBook(List.item_id))}
+          onClick={removeHandler}
         >
           Remove
         </button>
@@ -36,15 +43,21 @@ function BookList({ List }) {
 }
 
 BookList.defaultProps = {
-  item_id: '',
-  List: null,
+  List: {
+    item_id: '',
+    title: '',
+    author: '',
+  },
+  id: '',
 };
 
 BookList.propTypes = {
-  List: null,
-  item_id: PropTypes.string,
-  author: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  List: PropTypes.shape({
+    item_id: PropTypes.string,
+    author: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+  id: PropTypes.string,
 };
 
 export default BookList;

@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../../redux/books/booksSlice';
+import { postBook, addBook } from '../../redux/books/booksSlice';
 import './books.css';
 
 function BookAdd() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-
-  const book = {
-    item_id: '',
-    title: '',
-    author: '',
-  };
 
   const resetInput = () => {
     setTitle('');
@@ -22,15 +16,17 @@ function BookAdd() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (!title.trim() || !author.trim()) return;
+
     if (title && author) {
-      dispatch(
-        addBook({
-          ...book,
-          item_id: uuidv4(),
-          title,
-          author,
-        }),
-      );
+      const bookData = {
+        item_id: uuidv4(),
+        title,
+        author,
+        category: 'film',
+      };
+      dispatch(addBook(bookData));
+      dispatch(postBook(bookData));
       resetInput();
     }
   };
