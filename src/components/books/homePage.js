@@ -24,7 +24,7 @@ function Home() {
       </>
     );
   }
-  // const keys = Object.keys(listBooks);
+
   return (
     <div className="parent">
       {listBooks.map((book) => (

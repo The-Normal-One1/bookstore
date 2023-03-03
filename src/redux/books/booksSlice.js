@@ -52,7 +52,6 @@ const bookSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       const bookId = action.payload;
-      // state.listBooks = [...state.listBooks, bookId];
       state.listBooks.push(bookId);
     },
 
@@ -61,9 +60,6 @@ const bookSlice = createSlice({
       state.listBooks = state.listBooks.filter(
         (book) => book.item_id !== bookId,
       );
-      // return {
-      //   listBooks: result,
-      // };
     },
   },
   extraReducers(builder) {
