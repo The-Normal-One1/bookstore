@@ -2,7 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/J5jJJs036gOWzOau23Ql/books';
+const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/J5jJJs036gOWzOau23Ql/books/';
 
 const initialState = {
   listBooks: [],
@@ -12,12 +12,12 @@ const initialState = {
 
 export const postBook = createAsyncThunk(
   'listBooks/postBookData',
-  async (bookData, thunkAPI) => {
+  async (bookData) => {
     try {
       const response = await axios.post(API_URL, bookData);
       return response.data;
     } catch (e) {
-      return thunkAPI.rejectWithValue({ error: e.message });
+      return e.message;
     }
   },
 );

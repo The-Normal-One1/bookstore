@@ -23,6 +23,7 @@ function BookAdd() {
         item_id: uuidv4(),
         title,
         author,
+        category: 'film',
       };
       dispatch(addBook(bookData));
       dispatch(postBook(bookData));
