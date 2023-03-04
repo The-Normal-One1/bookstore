@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: var(--pale-grey);
+  background-color: #f5f6fa;
   font-family: 'Roboto Slab', serif;
   font-size: 32px;
   padding: 60px 60px;
