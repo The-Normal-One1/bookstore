@@ -176,7 +176,7 @@
   height: 100%;
   position: absolute;
   border: 5px solid var(--medium-blue);
-  border-radius: 100px 0px 0px 100px;
+  border-radius: 100px 0 0 100px;
   border-right: 0;
   transform-origin: right;
 }
@@ -270,7 +270,9 @@
   flex-direction: column;
   justify-content: center;
   margin-right: 9rem;
+
   /* gap: 10px; */
+
   /* padding-top: 50px; */
 }
 
