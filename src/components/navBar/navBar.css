@@ -1,10 +1,11 @@
 .nav {
   display: flex;
   text-decoration: none;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #fff;
   align-items: center;
   height: 89px;
+  padding: 0 60px;
 }
 
 .logo,
@@ -12,22 +13,30 @@
   text-decoration: none;
   color: #0290ff;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links li {
   list-style-type: none;
 }
 
-.links {
+.links,
+.links-cate {
   text-decoration: none;
   color: #bebcbc;
   font-size: 20px;
+}
+
+.links {
+  color: var(--black-two);
+  opacity: 0.85;
 }
 
 .icon {

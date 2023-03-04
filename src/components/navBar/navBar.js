@@ -16,7 +16,7 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/category" className="links">
+          <Link to="/category" className="links-cate">
             Categories
           </Link>
         </li>
