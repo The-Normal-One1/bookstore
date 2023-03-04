@@ -13,12 +13,14 @@
   text-decoration: none;
   color: #0290ff;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links li {
