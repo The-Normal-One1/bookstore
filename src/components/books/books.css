@@ -28,8 +28,8 @@
 .bookli {
   background-color: var(--white-two);
   padding: 20px 20px;
-  border: 1px solid #ccc9c9;
-  border-radius: 20px;
+  border: solid 1px var(--white);
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
 }
