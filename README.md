@@ -53,7 +53,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://the-normal-one1.github.io/bookstore/)
+- [Live Demo Link](https://book-awsome.onrender.com)
 
 ## 🚀 Project Details
 
